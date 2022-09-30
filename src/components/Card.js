@@ -38,10 +38,8 @@ class Card extends React.Component {
         <li data-testid="rare-card">
           {cardRare}
         </li>
-        <li data-testid="trunfo-card">
-          {cardTrunfo}
-          Super Trunfo
-        </li>
+        {cardTrunfo ? <li data-testid="trunfo-card">Super Trunfo</li> : null}
+
       </ol>
     );
   }
