@@ -16,7 +16,7 @@ class Card extends React.Component {
     return (
       <ol>
         <li data-testid="name-card">
-          {cardName}
+          { cardName }
         </li>
         <img
           src={ cardImage }
