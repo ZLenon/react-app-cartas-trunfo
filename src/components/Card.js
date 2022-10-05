@@ -38,7 +38,8 @@ class Card extends React.Component {
         <li data-testid="rare-card">
           {cardRare}
         </li>
-        {cardTrunfo ? <li data-testid="trunfo-card">Super Trunfo</li> : null}
+        { `${cardTrunfo}` === 'true' ? <p data-testid="trunfo-card"> Super Trunfo</p>
+          : false }
 
       </ol>
     );
