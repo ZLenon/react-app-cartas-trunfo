@@ -14,34 +14,51 @@ class Card extends React.Component {
       cardTrunfo,
     } = this.props;
     return (
-      <ol>
-        <li data-testid="name-card">
-          { cardName }
-        </li>
+      <>
+        <div
+          data-testid="name-card"
+        >
+          {cardName}
+
+        </div>
         <img
+          data-testid="image-card"
           src={ cardImage }
           alt={ cardName }
-          data-testid="image-card"
         />
-        <li data-testid="description-card">
+        <div
+          data-testid="description-card"
+        >
           {cardDescription}
-        </li>
-        <li data-testid="attr1-card">
+        </div>
+        <div
+          data-testid="attr1-card"
+        >
           {cardAttr1}
-        </li>
-        <li data-testid="attr2-card">
+        </div>
+        <div
+          data-testid="attr2-card"
+        >
           {cardAttr2}
-        </li>
-        <li data-testid="attr3-card">
+        </div>
+        <div
+          data-testid="attr3-card"
+        >
           {cardAttr3}
-        </li>
-        <li data-testid="rare-card">
+        </div>
+        <div
+          data-testid="rare-card"
+        >
           {cardRare}
-        </li>
-        { `${cardTrunfo}` === 'true' ? <p data-testid="trunfo-card"> Super Trunfo</p>
-          : false }
+        </div>
 
-      </ol>
+        {cardTrunfo && <div
+          data-testid="trunfo-card"
+        >
+          Super Trunfo
+        </div> }
+
+      </>
     );
   }
 }
