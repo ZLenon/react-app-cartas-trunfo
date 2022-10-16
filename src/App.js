@@ -15,17 +15,28 @@ class App extends React.Component {
       cardRare: '',
       cardTrunfo: false,
       hasTrunfo: false,
-      isSaveButtonDisabled: false,
+      isSaveButtonDisabled: true,
       onInputChange: '',
       onSaveButtonClick: '',
     };
   }
 
   onInputChange = ({ target }) => {
-    const { name, value } = target;
+    const { name } = target;
+    const value = type === 'checkbox' ? target.checked : target.value;
+    // console.log(`Nome do Estate: ${name}`, `valor:${value}`, ` type é: ${type}`);
     this.setState({
       [name]: value,
     });
+  };
+
+  onSaveButtonClick = ({ target }) => {
+    const { name } = target;
+    const { isSaveButtonDisabled } = this.state;
+
+    const condition = {
+
+    };
   };
 
   render() {
@@ -39,9 +50,6 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       hasTrunfo,
-      isSaveButtonDisabled,
-      onInputChange,
-      onSaveButtonClick,
     } = this.state;
     return (
       <>
@@ -56,6 +64,7 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           hasTrunfo={ hasTrunfo }
           onInputChange={ this.onInputChange }
+          // onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
           cardName={ cardName }
@@ -68,6 +77,7 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           hasTrunfo={ hasTrunfo }
           onInputChange={ this.onInputChange }
+          // onSaveButtonClick={ this.onSaveButtonClick }
         />
       </>
     );
